@@ -1,0 +1,239 @@
+/* MODAL BACKDROP */
+.hs-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 3vw, 24px);
+  box-sizing: border-box;
+}
+
+/* MODAL CARD */
+.hs-login-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: #eceae5;
+  border-radius: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+  padding: clamp(20px, 4vw, 40px);
+  box-sizing: border-box;
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+}
+
+/* CLOSE BUTTON */
+.hs-modal-close {
+  position: absolute;
+  top: clamp(12px, 2vw, 20px);
+  right: clamp(12px, 2vw, 20px);
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #6b6863;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.hs-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #1f1e1c;
+}
+
+/* HEADER */
+.hs-login-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6863;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.hs-login-title {
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  font-weight: 500;
+  color: #1f1e1c;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  word-break: break-word;
+}
+
+.hs-login-sub {
+  font-size: clamp(0.78rem, 0.88vw, 0.86rem);
+  color: #6b6863;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* NOTIFICATIONS (ERROR & SUCCESS) */
+.hs-login-error {
+  background: #fde8e8;
+  color: #c81e1e;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+  border: 1px solid #f8b4b4;
+  word-break: break-word;
+}
+
+.hs-login-success {
+  background: #def7ec;
+  color: #03543f;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+  border: 1px solid #bcf0da;
+  word-break: break-word;
+}
+
+/* FORM FIELDS */
+.hs-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vw, 16px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hs-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hs-input-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2c2926;
+  letter-spacing: 0.02em;
+}
+
+.hs-input-group input {
+  width: 100%;
+  min-width: 0;
+  background: #ded9d2;
+  border: 1px solid rgba(31, 30, 28, 0.12);
+  border-radius: 16px;
+  padding: clamp(9px, 1.2vw, 11px) 16px;
+  font-size: clamp(0.85rem, 0.95vw, 0.92rem);
+  color: #1f1e1c;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hs-input-group input:focus {
+  background: #ffffff;
+  border-color: #1f1e1c;
+}
+
+/* BUTTONS GROUP CONTAINER */
+.hs-auth-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* COMMON BUTTON STYLE */
+.hs-submit-login-btn {
+  width: 100%;
+  padding: clamp(10px, 1.2vw, 12px);
+  border-radius: 30px;
+  font-size: clamp(0.82rem, 0.9vw, 0.88rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* PRIMARY (DARK) BUTTON */
+.hs-primary-btn {
+  background: #232220;
+  color: #ffffff;
+  border: 1px solid #232220;
+}
+
+.hs-primary-btn:hover:not(:disabled) {
+  background: transparent;
+  color: #232220;
+}
+
+/* SECONDARY (OUTLINE) BUTTON */
+.hs-secondary-btn {
+  background: #232220;
+  color: #ffffff;
+  border: 1px solid #232220;
+}
+
+.hs-secondary-btn:hover:not(:disabled) {
+  background: transparent;
+  color: #232220;
+}
+
+.hs-submit-login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MOBILE REFINEMENT (320px - 430px) */
+@media (max-width: 480px) {
+  .hs-modal-backdrop {
+    padding: 10px;
+  }
+
+  .hs-login-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+    max-height: 94dvh;
+  }
+
+  .hs-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .hs-login-title {
+    font-size: 1.35rem;
+    padding-right: 28px;
+  }
+
+  .hs-login-sub {
+    margin-bottom: 16px;
+  }
+
+  .hs-input-group input {
+    padding: 9px 12px;
+    font-size: 0.86rem;
+  }
+
+  .hs-submit-login-btn {
+    padding: 10px;
+    font-size: 0.82rem;
+  }
+}

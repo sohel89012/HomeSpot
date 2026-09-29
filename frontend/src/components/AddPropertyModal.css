@@ -1,0 +1,159 @@
+.hs-add-prop-modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  max-height: 92dvh;
+  overflow-y: auto;
+  background: #eceae5;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  padding: clamp(16px, 3.5vw, 36px);
+  box-sizing: border-box;
+  animation: hs-modal-scale 0.25s ease-out;
+}
+
+.hs-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.hs-modal-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b6863;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hs-modal-title {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 700;
+  color: #1f1e1c;
+  margin: 0;
+  word-break: break-word;
+}
+
+.hs-add-prop-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hs-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hs-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hs-form-group label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #1f1e1c;
+  letter-spacing: 0.02em;
+}
+
+.hs-form-group input,
+.hs-form-group select,
+.hs-form-group textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 14px;
+  background: #ded9d2;
+  border: 1px solid rgba(31, 30, 28, 0.15);
+  border-radius: 14px;
+  font-size: 0.85rem;
+  color: #1f1e1c;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hs-form-group input:focus,
+.hs-form-group select:focus,
+.hs-form-group textarea:focus {
+  border-color: #1f1e1c;
+  background: #ffffff;
+}
+
+.hs-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.hs-form-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+.hs-form-error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 600px) {
+  .hs-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-add-prop-modal {
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+
+  .hs-form-group input,
+  .hs-form-group select,
+  .hs-form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .hs-form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hs-form-actions button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

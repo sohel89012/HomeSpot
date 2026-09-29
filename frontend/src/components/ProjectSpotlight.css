@@ -1,0 +1,244 @@
+.hs-spotlight-section {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto clamp(40px, 6vw, 100px) auto;
+  padding: 56px;
+  box-sizing: border-box;
+  background: #ded9d2;
+  border-radius: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT COLUMN */
+.hs-spotlight-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-spotlight-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6863;
+  margin-bottom: 8px;
+}
+
+.hs-spotlight-counter {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: #1f1e1c;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.hs-spotlight-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+  font-weight: 500;
+  color: #1f1e1c;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+  word-break: break-word;
+}
+
+.hs-spotlight-location {
+  font-size: 0.9rem;
+  color: #63605a;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+.hs-spotlight-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #55524d;
+  margin: 0 0 32px 0;
+  max-width: 480px;
+}
+
+/* SPECS META */
+.hs-spotlight-meta-grid {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 36px;
+  border-top: 1px solid rgba(31, 30, 28, 0.12);
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7b7873;
+}
+
+.meta-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f1e1c;
+}
+
+/* CTA BUTTON */
+.hs-spotlight-cta {
+  align-self: flex-start;
+  background: #1f1e1c;
+  color: #ffffff;
+  border: 1px solid #1f1e1c;
+  padding: 13px 34px;
+  border-radius: 40px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.hs-spotlight-cta:hover {
+  background: transparent;
+  color: #1f1e1c;
+}
+
+/* RIGHT COLUMN (IMAGE + SLIDER ARROWS) */
+.hs-spotlight-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.hs-spotlight-frame {
+  width: 100%;
+  height: 420px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #cdc7be;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+}
+
+.hs-spotlight-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* CONTROLS */
+.hs-spotlight-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.hs-spotlight-indicator {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #63605a;
+  letter-spacing: 0.05em;
+}
+
+.hs-spotlight-arrow-group {
+  display: flex;
+  gap: 12px;
+}
+
+.hs-arrow-btn {
+  background: #eceae5;
+  border: 1px solid rgba(31, 30, 28, 0.15);
+  color: #1f1e1c;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hs-arrow-btn:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE TABLET & MOBILE */
+@media (max-width: 960px) {
+  .hs-spotlight-section {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 36px;
+  }
+
+  .hs-spotlight-frame {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-spotlight-section {
+    padding: 24px 16px;
+    border-radius: 22px;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+
+  .hs-spotlight-counter {
+    font-size: 2.4rem;
+  }
+
+  .hs-spotlight-title {
+    font-size: 1.35rem;
+  }
+
+  .hs-spotlight-description {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .hs-spotlight-meta-grid {
+    gap: 18px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+  }
+
+  .meta-value {
+    font-size: 0.92rem;
+  }
+
+  .hs-spotlight-frame {
+    border-radius: 18px;
+  }
+
+  .hs-arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hs-spotlight-section {
+    padding: 20px 12px;
+  }
+
+  .hs-spotlight-cta {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+  }
+}

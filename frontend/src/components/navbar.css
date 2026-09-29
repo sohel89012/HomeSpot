@@ -1,0 +1,449 @@
+/* =========================================================
+   1. ORIGINAL DESKTOP NAVBAR (UNTOUCHED & PRESERVED)
+   ========================================================= */
+.hs-navbar-wrapper {
+  position: sticky;
+  top: clamp(8px, 1.5vw, 16px);
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 clamp(8px, 1.5vw, 16px);
+  box-sizing: border-box;
+}
+
+.hs-navbar {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(8px, 1.2vw, 12px) clamp(14px, 2.5vw, 28px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  gap: 12px;
+}
+
+/* LOGO */
+.hs-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.hs-logo-img {
+  height: clamp(24px, 2vw, 28px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.2s ease;
+}
+
+.hs-logo:hover .hs-logo-img {
+  transform: scale(1.05);
+}
+
+.hs-logo .logo-icon {
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  color: #1f1e1c;
+  line-height: 1;
+}
+
+.hs-logo .logo-text {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1f1e1c;
+  white-space: nowrap;
+}
+
+/* NAV LINKS */
+.hs-nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(14px, 2.2vw, 32px);
+  margin: 0;
+  padding: 0;
+}
+
+.hs-nav-links li a {
+  text-decoration: none;
+  color: #2c2926;
+  font-size: clamp(0.82rem, 0.95vw, 0.9rem);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hs-nav-links li a:hover {
+  color: #000000;
+  opacity: 0.7;
+}
+
+/* AUTH BUTTON & ACTIONS */
+.hs-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* PERMANENT PROFILE BUTTON */
+.hs-profile-shortcut-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 30, 28, 0.15);
+  color: #1f1e1c;
+  padding: clamp(6px, 0.9vw, 8px) clamp(12px, 1.4vw, 18px);
+  border-radius: 30px;
+  font-size: clamp(0.78rem, 0.85vw, 0.84rem);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.hs-profile-shortcut-btn:hover {
+  background: #ffffff;
+  border-color: #1f1e1c;
+}
+
+.hs-user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 14px);
+}
+
+.hs-user-greeting {
+  font-size: clamp(0.8rem, 0.9vw, 0.88rem);
+  font-weight: 600;
+  color: #1f1e1c;
+  white-space: nowrap;
+}
+
+.hs-login-btn {
+  background: #232220;
+  color: #ffffff;
+  border: 1px solid #232220;
+  padding: clamp(7px, 1vw, 9px) clamp(16px, 1.8vw, 24px);
+  border-radius: 30px;
+  font-size: clamp(0.78rem, 0.88vw, 0.85rem);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.hs-login-btn:hover {
+  background: transparent;
+  color: #232220;
+}
+
+/* SIGN OUT BUTTON ACCENT */
+.hs-signout-btn {
+  background: rgba(35, 34, 32, 0.08);
+  color: #232220;
+  border: 1px solid transparent;
+}
+
+.hs-signout-btn:hover {
+  background: #c81e1e;
+  border-color: #c81e1e;
+  color: #ffffff;
+}
+
+/* =========================================================
+   2. DESKTOP / MOBILE VISIBILITY DEFAULTS (>= 768px)
+   ========================================================= */
+.hs-mobile-burger-btn {
+  display: none !important;
+}
+
+.hs-mobile-nav-panel {
+  display: none !important;
+}
+
+/* =========================================================
+   3. MOBILE REDESIGN (STRICTLY BELOW 768px ONLY - FIXED ALIGNMENT)
+   ========================================================= */
+@media (max-width: 767px) {
+  /* Hide Desktop row contents */
+  .hs-nav-links,
+  .hs-nav-actions {
+    display: none !important;
+  }
+
+  /* Show Mobile elements */
+  .hs-mobile-burger-btn {
+    display: flex !important;
+  }
+
+  .hs-mobile-nav-panel {
+    display: flex !important;
+  }
+
+  /* Compact floating navbar wrapper */
+  .hs-navbar-wrapper {
+    top: 8px;
+    padding: 0 10px;
+    flex-direction: column;
+  }
+
+  .hs-navbar {
+    padding: 8px 16px;
+    border-radius: 32px;
+    gap: 0;
+  }
+
+  .hs-logo .logo-text {
+    font-size: 1.05rem;
+  }
+
+  .hs-logo-img {
+    height: 24px;
+  }
+
+  /* Hamburger Toggle Button */
+  .hs-mobile-burger-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.35rem;
+    color: #1f1e1c;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Floating Dropdown Drawer */
+  .hs-mobile-nav-panel {
+    width: 100%;
+    max-width: 1320px;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    animation: hs-mobile-expand 0.22s ease-out forwards;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hs-mobile-menu-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 2px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Sab links ko identical flex & left-aligned styling */
+  .hs-mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: #1f1e1c;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hs-mobile-link:hover,
+  .hs-mobile-link:active,
+  .hs-mobile-link.active-link {
+    background: rgba(31, 30, 28, 0.05);
+    font-weight: 600;
+  }
+
+  /* Properties Accordion */
+  .hs-mobile-accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hs-mobile-accordion-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #1f1e1c;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.18s ease;
+  }
+
+  .hs-mobile-accordion-btn:hover,
+  .hs-mobile-accordion-btn:active {
+    background: rgba(31, 30, 28, 0.05);
+  }
+
+  .accordion-caret {
+    font-size: 0.72rem;
+    transition: transform 0.2s ease;
+    color: #6b6863;
+  }
+
+  .accordion-caret.open {
+    transform: rotate(180deg);
+  }
+
+  .hs-mobile-subitems {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0 2px 14px;
+    gap: 2px;
+    margin-top: 2px;
+  }
+
+  .hs-mobile-sublink {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: #55524d;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.18s ease, color 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hs-mobile-sublink:hover,
+  .hs-mobile-sublink:active,
+  .hs-mobile-sublink.active-link {
+    background: rgba(31, 30, 28, 0.05);
+    color: #1f1e1c;
+    font-weight: 600;
+  }
+
+  .hs-mobile-divider {
+    height: 1px;
+    background: rgba(31, 30, 28, 0.08);
+    margin: 6px 0;
+  }
+
+  /* User / Auth Buttons */
+  .hs-mobile-auth-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 2px;
+  }
+
+  .hs-mobile-action-btn {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s ease;
+  }
+
+  .hs-mobile-add-prop-btn {
+    background: #1f1e1c;
+    color: #ffffff;
+  }
+
+  .hs-mobile-profile-btn {
+    background: rgba(31, 30, 28, 0.05);
+    color: #1f1e1c;
+  }
+
+  .user-dot {
+    color: #10b981;
+    font-size: 0.65rem;
+  }
+
+  .hs-mobile-signout-btn {
+    background: rgba(200, 30, 30, 0.08);
+    color: #c81e1e;
+  }
+
+  .hs-mobile-login-btn {
+    background: #232220;
+    color: #ffffff;
+    padding: 10px 16px;
+    margin-top: 2px;
+  }
+}
+
+/* NARROW PHONES (320px - 380px) */
+@media (max-width: 380px) {
+  .hs-navbar-wrapper {
+    top: 6px;
+    padding: 0 6px;
+  }
+
+  .hs-navbar {
+    padding: 7px 12px;
+  }
+
+  .hs-logo .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .hs-logo-img {
+    height: 20px;
+  }
+
+  .hs-mobile-burger-btn {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes hs-mobile-expand {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

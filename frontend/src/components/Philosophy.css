@@ -1,0 +1,150 @@
+.hs-philosophy-section {
+  display: grid;
+  /* Fluid column sizing: scale safely at 125% - 150% zoom */
+  grid-template-columns: minmax(min(100%, 180px), 260px) 1fr;
+  gap: clamp(24px, 3.5vw, 48px) clamp(24px, 4.5vw, 64px);
+  padding: clamp(40px, 6vw, 80px) clamp(12px, 2vw, 16px);
+  align-items: start;
+  max-width: 1320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* LEFT COLUMN - STATS */
+.hs-phil-stats {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.hs-stat-item .hs-stat-number {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  color: #1f1e1c;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px 0;
+}
+
+.hs-stat-item .hs-stat-label {
+  font-size: clamp(0.75rem, 0.85vw, 0.82rem);
+  color: #6b6863;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* RIGHT COLUMN - STATEMENT */
+.hs-phil-statement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hs-statement-heading {
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1f1e1c;
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
+  word-break: break-word;
+}
+
+.hs-statement-description {
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  color: #6b6863;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0;
+}
+
+/* FULL CENTER BUTTON WRAPPER */
+.hs-phil-btn-box {
+  grid-column: 1 / -1;       /* Both columns covered */
+  display: flex;
+  justify-content: center;   /* Exact horizontal center */
+  align-items: center;
+  margin-top: clamp(20px, 2.5vw, 32px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* PILL BUTTON */
+.hs-statement-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  color: #1f1e1c;
+  border: 1px solid #1f1e1c;
+  padding: clamp(10px, 1.2vw, 12px) clamp(20px, 2.8vw, 36px);
+  border-radius: 40px;
+  font-size: clamp(0.82rem, 0.9vw, 0.88rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.hs-statement-btn:hover {
+  background: #1f1e1c;
+  color: #ffffff;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 860px) {
+  .hs-philosophy-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .hs-phil-stats {
+    flex-direction: row;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-philosophy-section {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 24px;
+  }
+
+  .hs-phil-stats {
+    gap: 24px;
+  }
+
+  .hs-stat-item .hs-stat-number {
+    font-size: 1.85rem;
+  }
+
+  .hs-statement-heading {
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hs-statement-description {
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .hs-phil-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hs-statement-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+  }
+}
